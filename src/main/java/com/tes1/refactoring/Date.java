@@ -5,10 +5,17 @@ package com.tes1.refactoring;
 
 /**
  *
- * @author antonia
+ * @author zendia
  *
+ * @version 2.0
+ * 
+ * This class is used to store and validate dates.
  *
- * The refactor was made by Gisela Arias.
+ */
+
+
+/*
+   The refactor was made by Gisela Arias.
  *
  * Note from the refactorer:
  *
@@ -17,18 +24,23 @@ package com.tes1.refactoring;
  * code done managing the validation of dates.
  *
  * The purpose is to make the code more manteinable and reduce the possible of errors
- *
- *
- *
- */
+*/
+
 public class Date {
 
-    private int day;
+    private int day; //Day of the date
 
-    private int month;
+    private int month;//Month of the date
 
-    private int year;
+    private int year;//Year of the date
 
+    
+    /**
+     * Constructor of the Date class.
+     * @param day of the date
+     * @param month of the date
+     * @param year of the date
+     */
     public Date(int day, int month, int year) {
         if (validate(day, month, year)) {
             setDay(day);
@@ -41,39 +53,79 @@ public class Date {
     /*
      * Create encapsulated variables. Getters and Setters
      */
+    
+    /**
+     * @return number of the day
+     * @since 2.0
+     */
     public int getDay() {
         return this.day;
     }
 
+    
+    
+    /**
+     * Establishes the day of the date
+     * @param day of the date
+     * @since 2.0
+     */
     public void setDay(int day) {
         if (day >= 1 && day <= 31) {
             this.day = day;
         }
     }
-
+    
+    
+    /**
+     * @return number of the month
+     * @since 2.0
+     */
     public int getMonth() {
         return this.month;
     }
-
+    
+    
+    /**
+     * Establishes the month of the date
+     * @param month of the date
+     * @since 2.0
+     */
     public void setMonth(int month) {
         if (month >= 1 && month <= 12) {
             this.month = month;
         }
     }
 
+    
+    /**
+     * @return number of the year
+     * @since 2.0
+     */
     public int getYear() {
         return this.year;
     }
 
+    /**
+     * Establishes the year of the date
+     * @param year of the date
+     * @since 2.0
+     */
     public void setYear(int year) {
         if(checkDigitsYear(year))
             this.year = year;
     }
 
+    
+    /*
+        Methods to validate the date
+    */
+    
+    
     /**
      * Gets the maximum days that a month can have
      *
-     * @retrun an integer with the maximum days that a month can have
+     * @return an integer with the maximum days that a month can have
+     * @since 2.0
      */
     public int getDaysByMonth() {
 
@@ -97,6 +149,7 @@ public class Date {
      * Validate the date
      *
      * @return true if the class has a valid date
+     * @since 2.0
      */
     public boolean validate() {
         return (month != 0 && (day > 0 && day <= getDaysByMonth()) && year !=0);
@@ -105,8 +158,11 @@ public class Date {
 
     /**
      * Added method, can be used to validate the date before creating it.
-     *
+     * @param day to validate of a date
+     * @param month to validate of a date
+     * @param year to validate of a date
      * @return true if it is valid date
+     * @since 2.0
      */
     public boolean validate(int day, int month, int year) {
 
@@ -120,7 +176,8 @@ public class Date {
      * @param month is the month we want to get the days of
      * @param year is the year with the one we are going to check if it is leap
      * or not
-     * @retrun an integer with the maximum days that a month can have
+     * @return an integer with the maximum days that a month can have
+     * @since 2.0
      */
     public int getDaysByMonth(int month, int year) {
 
@@ -145,7 +202,8 @@ public class Date {
      *
      * @param year is the year with the one we are going to check if it is leap
      * or not
-     * @retrun true if the year is leap.
+     * @return true if the year is leap.
+     * @since 2.0
      */
     public boolean isYearLeap(int year) {
         return (year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0));
@@ -154,7 +212,8 @@ public class Date {
     /**
      * Gets if a year is leap
      *
-     * @retrun true if the year of the date set is leap.
+     * @return true if the year of the date set is leap.
+     * @since 2.0
      */
     public boolean isYearLeap() {
         return (year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0));
@@ -165,7 +224,8 @@ public class Date {
    /**
      * Checks if a year has  four digits
      *
-     * @retrun true if the year of the date is four digits long.
+     * @return true if the year of the date is four digits long.
+     * @since 2.0
      */
     public boolean checkDigitsYear(){
         String checkDigits = String.valueOf(year);
@@ -173,8 +233,9 @@ public class Date {
     }
     /**
      * Checks if a year has  four digits
-     *
-     * @retrun true if the year input is four digits long.
+     * @param year that is going to be checked
+     * @return true if the year input is four digits long.
+     * @since 2.0
      */
     public boolean checkDigitsYear(int year){
         String checkDigits = String.valueOf(year);
