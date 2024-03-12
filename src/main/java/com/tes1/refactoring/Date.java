@@ -4,12 +4,10 @@
 package com.tes1.refactoring;
 
 /**
- *
+ * Provides a class that is used to store and validate dates.
  * @author zendia
- *
  * @version 2.0
  * 
- * This class is used to store and validate dates.
  *
  */
 
@@ -36,7 +34,7 @@ public class Date {
 
     
     /**
-     * Constructor of the Date class.
+     * Create a new date.
      * @param day of the date
      * @param month of the date
      * @param year of the date
@@ -50,11 +48,12 @@ public class Date {
 
     }
 
-    /*
-     * Create encapsulated variables. Getters and Setters
-     */
+    
+     //Create encapsulated variables. Getters and Setters
+     
     
     /**
+     * Returns the day of the date
      * @return number of the day
      * @since 2.0
      */
@@ -77,6 +76,7 @@ public class Date {
     
     
     /**
+     * Returns the month of the date
      * @return number of the month
      * @since 2.0
      */
@@ -98,6 +98,7 @@ public class Date {
 
     
     /**
+     * Returns the year of the date
      * @return number of the year
      * @since 2.0
      */
@@ -116,13 +117,13 @@ public class Date {
     }
 
     
-    /*
-        Methods to validate the date
-    */
+   
+    //Methods to validate the date
+    
     
     
     /**
-     * Gets the maximum days that a month can have
+     * Returns the maximum days that a month can have.
      *
      * @return an integer with the maximum days that a month can have
      * @since 2.0
@@ -146,7 +147,8 @@ public class Date {
     }
 
     /**
-     * Validate the date
+     * Validate the date.
+     * Usually used when a date is changed through the setters of each value.
      *
      * @return true if the class has a valid date
      * @since 2.0
@@ -157,7 +159,8 @@ public class Date {
     }
 
     /**
-     * Added method, can be used to validate the date before creating it.
+     * Checks if the values passed for a date are valid to create one.
+     * Usually used before creating a new date.
      * @param day to validate of a date
      * @param month to validate of a date
      * @param year to validate of a date
@@ -171,7 +174,7 @@ public class Date {
     }
 
     /**
-     * Gets the maximum days that a month can have
+     * Returns the maximum days that a month can have
      *
      * @param month is the month we want to get the days of
      * @param year is the year with the one we are going to check if it is leap
@@ -198,7 +201,7 @@ public class Date {
     }
 
     /**
-     * Gets if a year is leap
+     * Returns if a year is leap
      *
      * @param year is the year with the one we are going to check if it is leap
      * or not
@@ -210,7 +213,7 @@ public class Date {
     }
 
     /**
-     * Gets if a year is leap
+     * Returns if a year is leap
      *
      * @return true if the year of the date set is leap.
      * @since 2.0
@@ -222,7 +225,7 @@ public class Date {
     
     
    /**
-     * Checks if a year has  four digits
+     * Checks if a year has four digits
      *
      * @return true if the year of the date is four digits long.
      * @since 2.0
@@ -231,8 +234,9 @@ public class Date {
         String checkDigits = String.valueOf(year);
         return checkDigits.length() == 4;
     }
+    
     /**
-     * Checks if a year has  four digits
+     * Checks if a year has four digits
      * @param year that is going to be checked
      * @return true if the year input is four digits long.
      * @since 2.0

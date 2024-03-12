@@ -12,35 +12,34 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import com.tes1.refactoring.Date;
 
+/**
+ * 
+ * Provides testing cases for the Date class.
+ * @author zendia 
+ * @version 2.0
+ * 
+ */
 public class DateTest {
 
-    public DateTest() {
-    }
 
-    @BeforeAll
-    public static void setUpClass() {
-    }
-
-    @AfterAll
-    public static void tearDownClass() {
-    }
-
-    @BeforeEach
-    public void setUp() {
-    }
-
-    @AfterEach
-    public void tearDown() {
-    }
-
-
+    /**
+     * Test if a date with correct values for year,month and day is set.
+     * @since 2.0
+     * 
+     */
     @Test
     public void correctDateTest() {
         Date correctDate = new Date(20, 6, 2008);
         assertTrue(correctDate.validate());
 
     }
-
+    
+    
+     /**
+     * Test if a date with correct values for a leap year is set.
+     * @since 2.0
+     * 
+     */
     @Test
     public void correctLeapDateTest() {
         Date goodDayLeapYear1 = new Date(29, 2, 2008);
@@ -53,6 +52,11 @@ public class DateTest {
 
     }
 
+     /**
+     * Test if a date with incorrect values for leap year is set.
+     * @since 2.0
+     * 
+     */
     @Test
     public void badLeapDateTest() {
         Date badDayLeapYear = new Date(29, 2, 2007);
@@ -62,7 +66,12 @@ public class DateTest {
         assertFalse(badDayLeapYear2.validate());
 
     }
-
+    
+     /**
+     * Test if a date with incorrect value for the month is set.
+     * @since 2.0
+     * 
+     */
     @Test
     public void badMonthTest() {
         Date badMonth = new Date(21, 0, 3000);
@@ -73,6 +82,11 @@ public class DateTest {
 
     }
 
+     /**
+     * Test if a date with incorrect value at the day is set.
+     * @since 2.0
+     * 
+     */
     @Test
     public void badDay() {
 
@@ -86,6 +100,12 @@ public class DateTest {
 
     }
 
+    
+     /**
+     * Test if a date with incorrect value at the year is set.
+     * @since 2.0
+     * 
+     */
     @Test
     public void badYearDateTest() {
         Date badYear = new Date(29, 5, 20);
